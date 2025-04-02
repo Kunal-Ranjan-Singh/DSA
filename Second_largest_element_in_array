@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        int largest = arr[0];
+        int Slargest = -1;
+        for(int i = 1; i < arr.size(); i++){
+            if(arr[i] > largest){
+                Slargest = largest;
+                largest = arr[i];
+            }
+            if(arr[i] < largest && arr[i] > Slargest){
+                Slargest = arr[i];
+            }
+        }
+        return Slargest;
+    }
+    //TC = O(n)
+    //SC = O(n)
+};
