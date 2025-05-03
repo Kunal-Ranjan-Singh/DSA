@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+class Solution {
+public:
+    void rotate(vector<int>& arr, int k) {
+        // vector<int> temp;
+        int n = arr.size();
+        k = k % n;
+        
+        reverse(arr.begin() + (n - k), arr.end());
+        reverse(arr.begin(), arr.begin() + (n - k));
+        reverse(arr.begin(), arr.end());
+
+        // if(k == 0) return;
+        // for(int i = n-k; i <= n-1; i++){
+        //     temp.push_back(nums[i]);
+        // }
+        // for(int j = n-k-1; j >= 0; j--){
+        //     nums[j+k] = nums[j];
+        // }
+        // for(int a = 0; a < k; a++){
+        //     nums[a] = temp[a];
+        // }
+
+    }
+};
