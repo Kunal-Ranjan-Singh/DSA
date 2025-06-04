@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> answer;
+        vector<int> curr;
+        backtrack(nums, 0, answer, curr);
+        return answer;
+    }
+private:
+    void backtrack(vector<int>& arr, int idx, vector<vector<int>>& result, vector<int>& curr){
+        if(idx == arr.size()){
+            result.push_back(curr);
+            return;
+        }
+        backtrack(arr, idx + 1, result, curr);
+        curr.push_back(arr[idx]);
+        backtrack(arr, idx + 1, result, curr);
+        curr.pop_back();
+    }    
+};
